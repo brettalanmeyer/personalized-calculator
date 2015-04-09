@@ -15,16 +15,31 @@ public class PersonalizedCalculator {
 
         System.out.println("Hi, " + name);
 
-        System.out.println("");
-        System.out.print("Please enter numbers (separated by spaces): ");
-        int addend = keyboard.nextInt();
-        int augend = keyboard.nextInt();
+        System.out.println("I can perform the following operations:");
+        System.out.println(" 1) Addition");
+        System.out.print("What would you like to do? ");
 
-        int sum = addend + augend;
+        int operation = keyboard.nextInt();
 
-        System.out.println("");
-        System.out.println("Results: ");
-        System.out.println("    " + addend + " + " + augend + " = " + sum);
+        if (operation == 1) {
+
+            System.out.println("");
+            System.out.print("Please enter numbers (separated by spaces): ");
+
+            int addend = keyboard.nextInt();
+            int augend = keyboard.nextInt();
+
+            int sum = addend + augend;
+
+            System.out.println("");
+            System.out.println("Results: ");
+            System.out.println("    " + addend + " + " + augend + " = " + sum);
+
+        } else {
+
+            System.out.println("I'm sorry, I don't understand what '" + operation + "' is.");
+
+        }
 
     }
 }
