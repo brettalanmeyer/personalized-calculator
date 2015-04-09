@@ -1,0 +1,19 @@
+# IntelliJ project files
+.idea
+*.iml
+*.ipr
+*.iws
+
+# Eclipse project files
+.classpath
+.project
+.settings
+
+# Maven output directory
+target
+
+# Compiled Java class files
+*.class
+
+# Mac OSX folder metadata
+.DS_Store
