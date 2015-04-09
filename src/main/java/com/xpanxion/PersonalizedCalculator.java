@@ -45,7 +45,9 @@ public class PersonalizedCalculator {
 
         int operation = keyboard.nextInt();
 
-        if (operation == ADDITION) {
+        switch (operation) {
+
+        case ADDITION:
 
             promptForNumbers();
 
@@ -57,7 +59,9 @@ public class PersonalizedCalculator {
             displayResultHeader();
             System.out.println("    " + addend + " + " + augend + " = " + sum);
 
-        } else if (operation == SUBTRACTION) {
+            break;
+
+        case SUBTRACTION:
 
             promptForNumbers();
 
@@ -69,7 +73,9 @@ public class PersonalizedCalculator {
             displayResultHeader();
             System.out.println("    " + minuend + " - " + subtrahend + " = " + difference);
 
-        } else if (operation == MULTIPLICATION) {
+            break;
+
+        case MULTIPLICATION:
 
             promptForNumbers();
 
@@ -81,7 +87,9 @@ public class PersonalizedCalculator {
             displayResultHeader();
             System.out.println("    " + multiplier + " * " + multiplicand + " = " + product);
 
-        } else if (operation == DIVISION) {
+            break;
+
+        case DIVISION:
 
             promptForNumbers();
 
@@ -101,11 +109,16 @@ public class PersonalizedCalculator {
 
             }
 
-        } else {
+            break;
+
+        default:
 
             System.out.println("I'm sorry, I don't understand what '" + operation + "' is.");
+
+            break;
 
         }
 
     }
+
 }
