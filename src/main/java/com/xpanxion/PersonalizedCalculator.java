@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class PersonalizedCalculator {
 
+    public static final int ADDITION       = 1;
+    public static final int SUBTRACTION    = 2;
+    public static final int MULTIPLICATION = 3;
+    public static final int DIVISION       = 4;
+
     private static void promptForNumbers() {
 
         System.out.println("");
@@ -31,16 +36,16 @@ public class PersonalizedCalculator {
 
         System.out.println("I can perform the following operations:");
 
-        System.out.println(" 1) Addition");
-        System.out.println(" 2) Subtraction");
-        System.out.println(" 3) Multiplication");
-        System.out.println(" 4) Division");
+        System.out.println(" )" + ADDITION + " Addition");
+        System.out.println(" )" + SUBTRACTION + " Subtraction");
+        System.out.println(" )" + MULTIPLICATION + " Multiplication");
+        System.out.println(" )" + DIVISION + " Division");
 
         System.out.print("What would you like to do? ");
 
         int operation = keyboard.nextInt();
 
-        if (operation == 1) {
+        if (operation == ADDITION) {
 
             promptForNumbers();
 
@@ -52,7 +57,7 @@ public class PersonalizedCalculator {
             displayResultHeader();
             System.out.println("    " + addend + " + " + augend + " = " + sum);
 
-        } else if (operation == 2) {
+        } else if (operation == SUBTRACTION) {
 
             promptForNumbers();
 
@@ -64,7 +69,7 @@ public class PersonalizedCalculator {
             displayResultHeader();
             System.out.println("    " + minuend + " - " + subtrahend + " = " + difference);
 
-        } else if (operation == 3) {
+        } else if (operation == MULTIPLICATION) {
 
             promptForNumbers();
 
@@ -76,7 +81,7 @@ public class PersonalizedCalculator {
             displayResultHeader();
             System.out.println("    " + multiplier + " * " + multiplicand + " = " + product);
 
-        } else if (operation == 4) {
+        } else if (operation == DIVISION) {
 
             promptForNumbers();
 
