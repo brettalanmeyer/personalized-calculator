@@ -15,6 +15,16 @@ public class PersonalizedCalculator {
 
         System.out.println("Hi, " + name);
 
-    }
+        System.out.println("");
+        System.out.print("Please enter numbers (separated by spaces): ");
+        int addend = keyboard.nextInt();
+        int augend = keyboard.nextInt();
 
+        int sum = addend + augend;
+
+        System.out.println("");
+        System.out.println("Results: ");
+        System.out.println("    " + addend + " + " + augend + " = " + sum);
+
+    }
 }
