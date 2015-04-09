@@ -16,7 +16,12 @@ public class PersonalizedCalculator {
         System.out.println("Hi, " + name);
 
         System.out.println("I can perform the following operations:");
+
         System.out.println(" 1) Addition");
+        System.out.println(" 2) Subtraction");
+        System.out.println(" 3) Multiplication");
+        System.out.println(" 4) Division");
+
         System.out.print("What would you like to do? ");
 
         int operation = keyboard.nextInt();
@@ -34,6 +39,48 @@ public class PersonalizedCalculator {
             System.out.println("");
             System.out.println("Results: ");
             System.out.println("    " + addend + " + " + augend + " = " + sum);
+
+        } else if (operation == 2) {
+
+            System.out.println("");
+            System.out.print("Please enter numbers (separated by spaces): ");
+
+            int minuend = keyboard.nextInt();
+            int subtrahend = keyboard.nextInt();
+
+            int difference = minuend - subtrahend;
+
+            System.out.println("");
+            System.out.println("Results: ");
+            System.out.println("    " + minuend + " - " + subtrahend + " = " + difference);
+
+        } else if (operation == 3) {
+
+            System.out.println("");
+            System.out.print("Please enter numbers (separated by spaces): ");
+
+            int multiplier = keyboard.nextInt();
+            int multiplicand = keyboard.nextInt();
+
+            int product = multiplier * multiplicand;
+
+            System.out.println("");
+            System.out.println("Results: ");
+            System.out.println("    " + multiplier + " * " + multiplicand + " = " + product);
+
+        } else if (operation == 4) {
+
+            System.out.println("");
+            System.out.print("Please enter numbers (separated by spaces): ");
+
+            int dividend = keyboard.nextInt();
+            int divisor = keyboard.nextInt();
+
+            float quotient = dividend / divisor;
+
+            System.out.println("");
+            System.out.println("Results: ");
+            System.out.println("    " + dividend + " / " + divisor + " = " + quotient);
 
         } else {
 
