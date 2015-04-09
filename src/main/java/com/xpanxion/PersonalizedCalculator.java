@@ -76,11 +76,19 @@ public class PersonalizedCalculator {
             int dividend = keyboard.nextInt();
             int divisor = keyboard.nextInt();
 
-            float quotient = dividend / divisor;
+            if (divisor == 0) {
 
-            System.out.println("");
-            System.out.println("Results: ");
-            System.out.println("    " + dividend + " / " + divisor + " = " + quotient);
+                System.out.println("I'm sorry, but you cannot divide by zero. Only Chuck Norris can do that.");
+
+            } else {
+
+                float quotient = dividend / divisor;
+
+                System.out.println("");
+                System.out.println("Results: ");
+                System.out.println("    " + dividend + " / " + divisor + " = " + quotient);
+
+            }
 
         } else {
 
