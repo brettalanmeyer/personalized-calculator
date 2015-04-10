@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class PersonalizedCalculator {
 
+    public static final int QUIT           = 0;
     public static final int ADDITION       = 1;
     public static final int SUBTRACTION    = 2;
     public static final int MULTIPLICATION = 3;
@@ -23,29 +24,15 @@ public class PersonalizedCalculator {
 
     }
 
-    public static void main(String[] args) {
-
-        System.out.println("** Welcome to the Personalized Calcaultor **");
-        System.out.println("");
-        System.out.print("What is your name? ");
-
-        Scanner keyboard = new Scanner(System.in);
-        String name = keyboard.next();
-
-        System.out.println("Hi, " + name);
-
-        System.out.println("I can perform the following operations:");
-
-        System.out.println(" )" + ADDITION + " Addition");
-        System.out.println(" )" + SUBTRACTION + " Subtraction");
-        System.out.println(" )" + MULTIPLICATION + " Multiplication");
-        System.out.println(" )" + DIVISION + " Division");
-
-        System.out.print("What would you like to do? ");
-
-        int operation = keyboard.nextInt();
+    private static void performAction(int operation, String name, Scanner keyboard) {
 
         switch (operation) {
+
+        case QUIT:
+
+            System.out.println("Goodbye, " + name);
+
+            break;
 
         case ADDITION:
 
@@ -116,6 +103,37 @@ public class PersonalizedCalculator {
             System.out.println("I'm sorry, I don't understand what '" + operation + "' is.");
 
             break;
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("** Welcome to the Personalized Calcaultor **");
+        System.out.println("");
+        System.out.print("What is your name? ");
+
+        Scanner keyboard = new Scanner(System.in);
+        String name = keyboard.next();
+
+        System.out.println("Hi, " + name);
+
+        System.out.println("I can perform the following operations:");
+
+        System.out.println(" " + QUIT + ") Quit");
+        System.out.println(" " + ADDITION + ") Addition");
+        System.out.println(" " + SUBTRACTION + ") Subtraction");
+        System.out.println(" " + MULTIPLICATION + ") Multiplication");
+        System.out.println(" " + DIVISION + ") Division");
+
+        int operation = -1;
+
+        while (operation != QUIT) {
+
+            System.out.print("What would you like to do? ");
+            operation = keyboard.nextInt();
+            performAction(operation, name, keyboard);
 
         }
 
