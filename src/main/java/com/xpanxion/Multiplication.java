@@ -2,7 +2,13 @@ package com.xpanxion;
 
 import java.util.Scanner;
 
-public class Multiplication {
+public class Multiplication extends BinaryOperation {
+
+    public Multiplication() {
+
+        super("*");
+
+    }
 
     public Calculation performOperation(Scanner keyboard) {
 
@@ -11,10 +17,7 @@ public class Multiplication {
 
         int product = multiplier * multiplicand;
 
-        Calculation result = new Calculation();
-        result.setTextResult("    " + multiplier + " * " + multiplicand + " = " + product);
-
-        return result;
+        return this.successfulCalculation(multiplier, multiplicand, product);
 
     }
 

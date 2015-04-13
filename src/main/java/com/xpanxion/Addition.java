@@ -2,7 +2,13 @@ package com.xpanxion;
 
 import java.util.Scanner;
 
-public class Addition {
+public class Addition extends BinaryOperation {
+
+    public Addition() {
+
+        super("+");
+
+    }
 
     public Calculation performOperation(Scanner keyboard) {
 
@@ -11,10 +17,7 @@ public class Addition {
 
         int sum = addend + augend;
 
-        Calculation result = new Calculation();
-        result.setTextResult("    " + addend + " + " + augend + " = " + sum);
-
-        return result;
+        return this.successfulCalculation(addend, augend, sum);
 
     }
 
