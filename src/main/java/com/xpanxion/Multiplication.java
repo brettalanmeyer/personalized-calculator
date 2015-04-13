@@ -1,7 +1,5 @@
 package com.xpanxion;
 
-import java.util.Scanner;
-
 public class Multiplication extends BinaryOperation {
 
     public Multiplication() {
@@ -10,15 +8,23 @@ public class Multiplication extends BinaryOperation {
 
     }
 
-    public Calculation performOperation(Scanner keyboard) {
+    @Override
+    protected int calculate(int multiplier, int multiplicand) {
 
-        int multiplier = keyboard.nextInt();
-        int multiplicand = keyboard.nextInt();
+        return multiplier * multiplicand;
 
-        int product = multiplier * multiplicand;
+    }
 
-        return this.successfulCalculation(multiplier, multiplicand, product);
+    @Override
+    protected boolean isValid(int multiplier, int multiplicand) {
 
+        return true;
+
+    }
+
+    @Override
+    protected String errorMessage() {
+        return "";
     }
 
 }

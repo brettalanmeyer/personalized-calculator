@@ -1,7 +1,5 @@
 package com.xpanxion;
 
-import java.util.Scanner;
-
 public class Subtraction extends BinaryOperation {
 
     public Subtraction() {
@@ -10,15 +8,23 @@ public class Subtraction extends BinaryOperation {
 
     }
 
-    public Calculation performOperation(Scanner keyboard) {
+    @Override
+    protected int calculate(int minuend, int subtrahend) {
 
-        int minuend = keyboard.nextInt();
-        int subtrahend = keyboard.nextInt();
+        return minuend - subtrahend;
 
-        int difference = minuend - subtrahend;
+    }
 
-        return this.successfulCalculation(minuend, subtrahend, difference);
+    @Override
+    protected boolean isValid(int minuend, int subtrahend) {
 
+        return true;
+
+    }
+
+    @Override
+    protected String errorMessage() {
+        return "";
     }
 
 }

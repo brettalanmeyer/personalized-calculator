@@ -1,7 +1,5 @@
 package com.xpanxion;
 
-import java.util.Scanner;
-
 public class Division extends BinaryOperation {
 
     public Division() {
@@ -10,26 +8,24 @@ public class Division extends BinaryOperation {
 
     }
 
-    public Calculation performOperation(Scanner keyboard) {
+    @Override
+    protected int calculate(int dividend, int divisor) {
 
-        int dividend = keyboard.nextInt();
-        int divisor = keyboard.nextInt();
+        return dividend / divisor;
 
-        if (divisor == 0) {
+    }
 
-            Calculation result = new Calculation();
+    @Override
+    protected boolean isValid(int dividend, int divisor) {
 
-            result.setTextResult("I'm sorry, but you cannot divide by zero. Only Chuck Norris can do that.");
+        return divisor != 0;
 
-            return result;
+    }
 
-        } else {
+    @Override
+    protected String errorMessage() {
 
-            int quotient = dividend / divisor;
-
-            return this.successfulCalculation(dividend, divisor, quotient);
-
-        }
+        return "I'm sorry, but you cannot divide by zero. Only Chuck Norris can do that.";
 
     }
 
