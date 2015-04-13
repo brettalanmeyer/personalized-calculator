@@ -2,7 +2,7 @@ package com.xpanxion;
 
 import java.util.Scanner;
 
-public class Factorial {
+public class Factorial implements Operation {
 
     public Calculation performOperation(Scanner keyboard) {
 

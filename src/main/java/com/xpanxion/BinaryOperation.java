@@ -2,7 +2,7 @@ package com.xpanxion;
 
 import java.util.Scanner;
 
-public abstract class BinaryOperation {
+public abstract class BinaryOperation implements Operation {
 
     private final String operation;
 

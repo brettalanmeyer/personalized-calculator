@@ -13,6 +13,8 @@ public class Calculator {
 
     public static Calculation performAction(int operation, String name, Scanner keyboard) {
 
+        Operation op = null;
+
         Calculation result = new Calculation();
 
         switch (operation) {
@@ -20,54 +22,47 @@ public class Calculator {
         case QUIT:
 
             result.setTextResult("Goodbye, " + name);
-
             break;
 
         case ADDITION:
 
-            Addition addition = new Addition();
-            result = addition.performOperation(keyboard);
-
+            op = new Addition();
             break;
 
         case SUBTRACTION:
 
-            Subtraction subtraction = new Subtraction();
-            result = subtraction.performOperation(keyboard);
-
+            op = new Subtraction();
             break;
 
         case MULTIPLICATION:
 
-            Multiplication multiplication = new Multiplication();
-            result = multiplication.performOperation(keyboard);
-
+            op = new Multiplication();
             break;
 
         case DIVISION:
 
-            Division division = new Division();
-            result = division.performOperation(keyboard);
-
+            op = new Division();
             break;
 
         case FACTORIAL:
 
-            Factorial factorial = new Factorial();
-            result = factorial.performOperation(keyboard);
-
+            op = new Factorial();
             break;
 
         default:
 
             result.setTextResult("I'm sorry, I don't understand what '" + operation + "' is.");
-
             break;
+
+        }
+
+        if (op != null) {
+
+            result = op.performOperation(keyboard);
 
         }
 
         return result;
 
     }
-
 }
