@@ -25,68 +25,36 @@ public class Calculator {
 
         case ADDITION:
 
-            int addend = keyboard.nextInt();
-            int augend = keyboard.nextInt();
-
-            int sum = addend + augend;
-
-            result.setTextResult("    " + addend + " + " + augend + " = " + sum);
+            Addition addition = new Addition();
+            result = addition.performOperation(keyboard);
 
             break;
 
         case SUBTRACTION:
 
-            int minuend = keyboard.nextInt();
-            int subtrahend = keyboard.nextInt();
-
-            int difference = minuend - subtrahend;
-
-            result.setTextResult("    " + minuend + " - " + subtrahend + " = " + difference);
+            Subtraction subtraction = new Subtraction();
+            result = subtraction.performOperation(keyboard);
 
             break;
 
         case MULTIPLICATION:
 
-            int multiplier = keyboard.nextInt();
-            int multiplicand = keyboard.nextInt();
-
-            int product = multiplier * multiplicand;
-
-            result.setTextResult("    " + multiplier + " * " + multiplicand + " = " + product);
+            Multiplication multiplication = new Multiplication();
+            result = multiplication.performOperation(keyboard);
 
             break;
 
         case DIVISION:
 
-            int dividend = keyboard.nextInt();
-            int divisor = keyboard.nextInt();
-
-            if (divisor == 0) {
-
-                result.setTextResult("I'm sorry, but you cannot divide by zero. Only Chuck Norris can do that.");
-
-            } else {
-
-                int quotient = dividend / divisor;
-
-                result.setTextResult("    " + dividend + " / " + divisor + " = " + quotient);
-
-            }
+            Division division = new Division();
+            result = division.performOperation(keyboard);
 
             break;
 
         case FACTORIAL:
 
-            int value = keyboard.nextInt();
-            int total = 1;
-
-            for (int i = value; i > 0; i--) {
-
-                total = total * i;
-
-            }
-
-            result.setTextResult("    " + value + "! = " + total);
+            Factorial factorial = new Factorial();
+            result = factorial.performOperation(keyboard);
 
             break;
 
