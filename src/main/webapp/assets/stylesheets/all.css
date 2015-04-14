@@ -1,0 +1,60 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	
+}
+
+body {
+
+	font-size: 13px;
+	font-family: Arial;
+	padding: 2em;
+	
+}
+
+
+form {
+	
+	margin: 1em 0;
+	padding: 0 1em;
+	border: solid 1px #ccc;
+	
+}
+
+.form-group {
+	
+	margin: 1em 0;
+	
+}
+
+input {
+	
+	padding: 0.25em;
+	border: solid 1px #ccc;
+	
+}
+
+button {
+	
+	cursor: pointer;
+	background: none;
+	border: solid 1px #999;
+	border-radius: 4px;
+	padding: 0.5em;
+	background: #939393;
+	background: linear-gradient(to bottom, #939393 0%,#bfbfbf 100%);
+	
+}
+
+button:hover {
+
+	border-color: #666;
+
+}
+
+button:active {
+
+	background: linear-gradient(to bottom, #bfbfbf 0%,#939393 100%);
+
+}
