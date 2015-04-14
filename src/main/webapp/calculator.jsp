@@ -16,8 +16,26 @@
 		<form method="GET" action="/calculator">
 		
 			<div class="form-group">
+			
+				<label for="form-field-operand">What would you like to do?</label>
+				<select id="form-field-operand" name="operation">
+					
+					<option>Select option...</option>	
+					<option value="1">Add</option>
+					<option value="2">Subtract</option>
+					<option value="3">Multiply</option>
+					<option value="4">Divide</option>
+					<option value="5">Factorial</option>
+					
+				</select>
+				
+			</div>
+			
+			<div class="form-group">
+			
 				<label for="form-field-operands">Please enter some numbers (separated by spaces)</label>
 				<input type="text" id="form-field-operands" name="operands" required />
+				
 			</div>
 			
 			<div class="form-group">

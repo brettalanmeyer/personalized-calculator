@@ -34,8 +34,10 @@ public class CalculatorServlet extends HttpServlet {
         String operands = req.getParameter("operands");
         Scanner scanner = new Scanner(operands);
 
+        int operation = Integer.parseInt(req.getParameter("operation"));
+
         Calculator calculator = new Calculator();
-        Calculation results = calculator.performAction(Calculator.ADDITION, guestName, scanner);
+        Calculation results = calculator.performAction(operation, guestName, scanner);
 
         req.setAttribute("resultText", results.getTextResult());
 
