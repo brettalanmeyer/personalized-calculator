@@ -58,7 +58,16 @@ public class Calculator {
 
         if (op != null) {
 
-            result = op.performOperation(keyboard);
+            try {
+                result = op.performOperation(keyboard);
+
+            } catch (java.util.InputMismatchException inputMismatchException) {
+                result = new Calculation();
+                result.setTextResult("Invalid values specified");
+            } catch (java.util.NoSuchElementException noSuchElementException) {
+                result = new Calculation();
+                result.setTextResult("Invalid values specified");
+            }
 
         }
 

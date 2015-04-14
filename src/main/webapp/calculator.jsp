@@ -20,7 +20,6 @@
 				<label for="form-field-operand">What would you like to do?</label>
 				<select id="form-field-operand" name="operation">
 					
-					<option>Select option...</option>	
 					<option value="1">Add</option>
 					<option value="2">Subtract</option>
 					<option value="3">Multiply</option>
