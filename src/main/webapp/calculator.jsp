@@ -37,7 +37,11 @@
 				
 			</div>
 			
-			<div class="form-group">
+			<div class="form-group error-message">
+				Please enter valid numbers
+			</div>
+			
+			<div id="submit" class="form-group" style="display: none;">
 				<button type="submit">Calculate</button>
 			</div>
 		
@@ -48,6 +52,8 @@
 		</div>
 		
 		<a href="/logout">Log Out</a>
+		
+		<script src="/assets/javascripts/all.js"></script>
 		
 	</body>
 	
