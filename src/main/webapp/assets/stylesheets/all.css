@@ -8,8 +8,9 @@
 body {
 
 	font-size: 13px;
-	font-family: Arial;
+	font-family: Helvetica, Arial, sans-serif;
 	padding: 2em;
+	background: #a9a9a9;
 	
 }
 
@@ -50,15 +51,16 @@ form {
 
 input {
 	
-	padding: 0.25em;
-	border: solid 1px #ccc;
+	padding: 0.5em;
+	border: solid 1px #000;
+	background: #d3d3d3;
 	
 }
 
 button {
 	
 	cursor: pointer;
-	background: #fff;
+	background: #d3d3d3;
 	border: solid 1px #999;
 	border-radius: 2px;
 	padding: 0.5em;
