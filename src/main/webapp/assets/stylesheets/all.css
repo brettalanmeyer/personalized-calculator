@@ -49,11 +49,26 @@ form {
 	
 }
 
-input {
+.error-message {
+	
+	display: none;
+	background-color: #ffc0cb;
+	border: solid 2px #f00;
+	padding: 0.5em;
+	
+}
+
+input, select {
 	
 	padding: 0.5em;
 	border: solid 1px #000;
 	background: #d3d3d3;
+	
+}
+
+select {
+	
+	cursor: pointer;
 	
 }
 

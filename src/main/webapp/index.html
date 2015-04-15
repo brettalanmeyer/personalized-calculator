@@ -11,18 +11,24 @@
 	
 		<h1>Personalized Calculator</h1>
 		
-		<form method="POST" action="/calculator">
+		<form id="form-name" method="POST" action="/calculator">
 		
 			<div class="form-group">
 				<label for="form-field-guest">What is your name?</label>
-				<input id="form-field-guest" name="guest" required />
+				<input id="form-field-guest" name="guest" />
 			</div>
 			
 			<div class="form-group">
 				<button type="submit">Start</button>
 			</div>
 			
+			<div class="form-group error-message">
+				Please Enter Your Name
+			</div>
+			
 		</form>
+		
+		<script src="/assets/javascripts/all.js"></script>
 		
 	</body>
 	
