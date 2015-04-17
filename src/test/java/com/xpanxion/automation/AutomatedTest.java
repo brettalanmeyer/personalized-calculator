@@ -11,18 +11,40 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AutomatedTest {
 
+    private WebDriver driver;
+
     public static void main(String[] args) {
 
+        AutomatedTest test = new AutomatedTest();
+
+        test.setup();
+        test.successfulLoginLogout();
+        test.missingRequiredField();
+        test.tearDown();
+
+    }
+
+    private void tearDown() {
+
+        this.driver.quit();
+
+    }
+
+    private void setup() {
+
         System.setProperty("webdriver.chrome.driver", "C:/projects/drivers/chromedriver.exe");
+        this.driver = new ChromeDriver();
 
-        WebDriver driver = new ChromeDriver();
+    }
 
-        driver.get("http://localhost:8080/index.html");
+    protected void successfulLoginLogout() {
 
-        String pageTitle = driver.getTitle();
+        this.driver.get("http://localhost:8080/index.html");
+
+        String pageTitle = this.driver.getTitle();
         System.out.println(pageTitle);
 
-        WebElement guestField = driver.findElement(By.name("guest"));
+        WebElement guestField = this.driver.findElement(By.name("guest"));
         guestField.sendKeys("Brett");
         guestField.submit();
 
@@ -31,15 +53,31 @@ public class AutomatedTest {
             public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
             }
+
         };
 
-        Wait<WebDriver> wait = new WebDriverWait(driver, 30);
+        Wait<WebDriver> wait = new WebDriverWait(this.driver, 30);
         wait.until(pageIsLoaded);
 
-        WebElement greeting = driver.findElement(By.xpath("/html/body/h1"));
+        WebElement greeting = this.driver.findElement(By.xpath("/html/body/h1"));
         System.out.println(greeting.getText());
 
-        driver.quit();
+        WebElement logoutLink = this.driver.findElement(By.linkText("Log Out"));
+        logoutLink.click();
+
+        String currentUrl = this.driver.getCurrentUrl();
+        System.out.println(currentUrl);
 
     }
+
+    protected void missingRequiredField() {
+
+        // sad-path scenario
+        this.driver.get("http://localhost:8080/");
+        this.driver.findElement(By.name("guest")).submit();
+        WebElement errorMessage = this.driver.findElement(By.className("error-message"));
+        System.out.println(errorMessage.isDisplayed());
+
+    }
+
 }
