@@ -47,9 +47,7 @@
 		
 		</form>
 		
-		<div class="form-group">
-			${requestScope.resultText}
-		</div>
+		<div id="result-text" class="form-group">${requestScope.resultText}</div>
 		
 		<a href="/logout">Log Out</a>
 		
