@@ -9,14 +9,14 @@ public class Subtraction extends BinaryOperation {
     }
 
     @Override
-    protected int calculate(int minuend, int subtrahend) {
+    protected long calculate(long minuend, long subtrahend) {
 
         return minuend - subtrahend;
 
     }
 
     @Override
-    protected boolean isValid(int minuend, int subtrahend) {
+    protected boolean isValid(long minuend, long subtrahend) {
 
         return true;
 

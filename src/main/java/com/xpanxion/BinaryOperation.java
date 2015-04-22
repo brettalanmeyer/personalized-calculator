@@ -6,9 +6,9 @@ public abstract class BinaryOperation implements Operation {
 
     private final String operation;
 
-    protected abstract int calculate(int leftHandSide, int rightHandSide);
+    protected abstract long calculate(long leftHandSide, long rightHandSide);
 
-    protected abstract boolean isValid(int leftHandSide, int rightHandSide);
+    protected abstract boolean isValid(long leftHandSide, long rightHandSide);
 
     protected abstract String errorMessage();
 
@@ -20,12 +20,12 @@ public abstract class BinaryOperation implements Operation {
 
     public Calculation performOperation(Scanner keyboard) {
 
-        int leftHandSide = keyboard.nextInt();
-        int rightHandSide = keyboard.nextInt();
+        long leftHandSide = keyboard.nextLong();
+        long rightHandSide = keyboard.nextLong();
 
         if (this.isValid(leftHandSide, rightHandSide)) {
 
-            int result = this.calculate(leftHandSide, rightHandSide);
+            long result = this.calculate(leftHandSide, rightHandSide);
             return this.successfulCalculation(leftHandSide, rightHandSide, result);
 
         } else {
@@ -46,7 +46,7 @@ public abstract class BinaryOperation implements Operation {
 
     }
 
-    public Calculation successfulCalculation(int leftHandSide, int rightHandSide, int result) {
+    public Calculation successfulCalculation(long leftHandSide, long rightHandSide, long result) {
 
         Calculation calculation = new Calculation();
 

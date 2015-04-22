@@ -9,14 +9,14 @@ public class Division extends BinaryOperation {
     }
 
     @Override
-    protected int calculate(int dividend, int divisor) {
+    protected long calculate(long dividend, long divisor) {
 
         return dividend / divisor;
 
     }
 
     @Override
-    protected boolean isValid(int dividend, int divisor) {
+    protected boolean isValid(long dividend, long divisor) {
 
         return divisor != 0;
 

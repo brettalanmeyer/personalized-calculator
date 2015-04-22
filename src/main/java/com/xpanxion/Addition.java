@@ -9,14 +9,14 @@ public class Addition extends BinaryOperation {
     }
 
     @Override
-    protected int calculate(int addend, int augend) {
+    protected long calculate(long addend, long augend) {
 
         return addend + augend;
 
     }
 
     @Override
-    protected boolean isValid(int addend, int augend) {
+    protected boolean isValid(long addend, long augend) {
 
         return true;
 
