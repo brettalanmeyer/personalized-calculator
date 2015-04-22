@@ -32,7 +32,7 @@ public class LoginLogoutScenarios {
     @Test
     public void successfulLoginLogout() {
 
-        this.loginPage.shouldHavePageTitle("Web-based Personalized Calcualtor");
+        this.loginPage.shouldHavePageTitle("Web-based Personalized Calculator");
 
         CalculationPage calculationPage = this.loginPage.loginAs("Brett");
         calculationPage.shouldDisplayGreeting("Hi, Brett");
